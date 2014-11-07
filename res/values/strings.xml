@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Knight\'s Path</string>
+    <string name="title_section1">Home</string>
+    <string name="title_section2">Map</string>
+    <string name="title_section3">Schedule</string>
+    <string name="title_section4">About</string>
+    <string name="title_section5">Help</string>
+    <string name="fragment_two">Fragment 2</string>
+    <string name="fragment_three">Fragment 3</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_example">Example action</string>
+    <string name="go_to">Go to Destination</string>
+    <string name="action_settings">Settings</string>
+
+</resources>
