@@ -59,7 +59,8 @@ public class Layout2Fragment extends Fragment {
 				googleMap = ((MapFragment)getFragmentManager().findFragmentById(R.id.map)).getMap();
 				//googleMap = ((SupportMapFragment)getSupportFragmentManager().findFragmentById(R.id.map).getMap();
 			}
-			//googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+			googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+	
 			//Marker TP = googleMap.addMarker(new MarkerOptions().position(TutorialsPoint).title("TutorialsPoint"));
 		}catch(Exception e)
 		{

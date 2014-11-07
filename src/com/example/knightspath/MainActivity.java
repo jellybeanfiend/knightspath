@@ -24,7 +24,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-
 public class MainActivity extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
@@ -148,6 +147,12 @@ public class MainActivity extends Activity
         }
         
         return super.onOptionsItemSelected(item);
+    }
+    
+    @Override
+    public void onDestroy(){
+    
+    
     }
 
     /**
