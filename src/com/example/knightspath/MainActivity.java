@@ -1,34 +1,27 @@
 package com.example.knightspath;
 
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
+import ucf.knightspathlib.*;
+import ucf.knightspathlib.GoogleMapsWrapper.*;
 
-import android.app.Activity;
-import android.app.ActionBar;
-import android.app.Fragment;
-import android.app.FragmentManager;
+import com.google.android.gms.maps.*;
+import com.google.android.gms.maps.model.*;
+
+import android.app.*;
 import android.content.Context;
-import android.os.Build;
-import android.os.Bundle;
+import android.os.*;
 import android.util.Log;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
+import android.view.*;
 import android.support.v4.widget.DrawerLayout;
-import android.widget.ArrayAdapter;
-import android.widget.TextView;
+import android.webkit.WebView.FindListener;
+import android.widget.*;
 
 public class MainActivity extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
 	private GoogleMap googleMap;
-	static final LatLng TutorialsPoint = new LatLng(21, 57);
+	private GPSWrapper gps;
+	
+	private LatLng TutorialsPoint = new LatLng(21, 57);
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
      */
@@ -57,7 +50,8 @@ public class MainActivity extends Activity
         
         onNavigationDrawerItemSelected(mNavigationDrawerFragment.getId());
         
-        
+        gps = new GPSWrapper(this.getApplicationContext());
+        gps.startGPS();
     }
 
     @Override
@@ -145,7 +139,7 @@ public class MainActivity extends Activity
         if (id == R.id.action_settings) {
             return true;
         }
-        
+        Log.e("GPS", gps.getCurrentLocation().toString());
         return super.onOptionsItemSelected(item);
     }
     
@@ -184,7 +178,7 @@ public class MainActivity extends Activity
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            //View rootView = inflater.inflate(R.layout.mapfragment, container, false);
+ 
             return rootView;
         }
 
@@ -195,7 +189,4 @@ public class MainActivity extends Activity
                     getArguments().getInt(ARG_SECTION_NUMBER));
         }
     }
-    
-    
-
 }
