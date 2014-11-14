@@ -1,0 +1,10 @@
+.classpath
+.project
+AndroidManifest.xml
+bin/
+project.properties
+gen/
+*.apk
+*.dex
+*.class
+local.properties
